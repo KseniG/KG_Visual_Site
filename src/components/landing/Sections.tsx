@@ -45,7 +45,7 @@ export function CasesSection() {
       <div className="mx-auto max-w-[1320px]">
         <div className="mb-10 md:mb-14">
           <h2 className="text-5xl font-semibold uppercase leading-[0.92] tracking-[-0.05em] md:text-7xl">Кейсы</h2>
-          <dl className="mt-10 grid gap-8 border-y border-border py-7 md:grid-cols-3">
+          <dl className="mt-10 grid gap-8 md:grid-cols-3">
             {stats.map((item) => (
               <div key={item.value} className="flex flex-col gap-3">
                 <dt className="font-heading text-5xl font-semibold leading-none tracking-[-0.05em] text-primary md:text-6xl">{item.value}</dt>
@@ -120,7 +120,7 @@ export function ShowsSection() {
   return (
     <section className="bg-background px-4 py-20 text-foreground sm:px-8 md:py-28 lg:px-14">
       <div className="mx-auto max-w-[1320px]">
-        <h2 className="mb-10 text-5xl font-semibold uppercase leading-[0.92] tracking-[-0.05em] md:mb-14 md:text-7xl">Проекты на мероприятиях</h2>
+        <h2 className="mb-10 text-5xl font-semibold leading-[0.92] tracking-[-0.05em] md:mb-14 md:text-7xl">Проекты на мероприятиях</h2>
         <div className="border-y border-border">
           {projects.map((project) => (
             <article key={project.title} className="grid gap-5 border-b border-border py-7 last:border-b-0 md:grid-cols-[12rem_minmax(0,1fr)_auto] md:items-center md:gap-8 md:py-9">
