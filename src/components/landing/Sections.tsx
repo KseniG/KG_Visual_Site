@@ -1,11 +1,11 @@
-import { Sparkles, Boxes, WandSparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Boxes, WandSparkles } from "lucide-react";
 import { Filmstrip } from "@/components/wow/Filmstrip";
 import { portfolioSections, filmPhotos } from "@/data/portfolio";
 import { CaseBlock } from "./CaseBlock";
 
 export function AboutSection() {
   const skills = [
-    { href: "#graphics", icon: Sparkles, title: "Графика", text: "Айдентика, афиши, вёрстка, презентации и сайты." },
+    { href: "#branding", icon: Sparkles, title: "Графика", text: "Айдентика, афиши, вёрстка, презентации и сайты." },
     { href: "#mapping-new-year", icon: Boxes, title: "3D", text: "Рендеры, предметные сцены, упаковка, композиции для промо и презентаций." },
     { href: "#motion", icon: WandSparkles, title: "AI + motion", text: "Генеративные кадры, анимационные фрагменты, визуалы для экранов и меппинга." },
   ];
@@ -35,9 +35,9 @@ export function AboutSection() {
 
 export function CasesSection() {
   const stats = [
-    { value: "4 года", text: "в дизайне и программировании. В портфолио — проекты для РГПУ и медиапродакшена" },
-    { value: "10", text: "инструментов в кейсах, среди них Figma, CorelDRAW, Krita, Photoshop, Blender, Illustrator, After Effects, Cinema 4D, Kling и Gemini" },
-    { value: "15", text: "коммерческих кейсов" },
+    { value: "4 года", text: "в дизайне и программировании. Учусь и работаю инженером в РГПУ им. Герцена. Делала меппинг с командой Experiment 619." },
+    { value: "10", text: "инструментов для графики, 3D и анимации.", tools: "Figma, Illustrator, CorelDRAW, Photoshop, Krita, Blender, Cinema 4D, After Effects, Gemini и Kling." },
+    { value: "15", text: "кейсов — от афиш и плакатов до сайта продакшена Cinestatic и презентации для участников ПМЭФ." },
   ];
 
   return (
@@ -45,11 +45,22 @@ export function CasesSection() {
       <div className="mx-auto max-w-[1320px]">
         <div className="mb-10 md:mb-14">
           <h2 className="text-5xl font-semibold uppercase leading-[0.92] tracking-[-0.05em] md:text-7xl">Кейсы</h2>
-          <dl className="mt-10 grid gap-8 md:grid-cols-3">
+          <dl className="mt-10 grid grid-cols-1 gap-[clamp(2rem,5vw,6rem)] md:grid-cols-3">
             {stats.map((item) => (
-              <div key={item.value} className="flex flex-col gap-3">
+              <div key={item.value} className="flex min-w-0 flex-col gap-3 text-left">
                 <dt className="font-heading text-5xl font-semibold leading-none tracking-[-0.05em] text-primary md:text-6xl">{item.value}</dt>
-                <dd className="max-w-sm text-base leading-snug text-muted-foreground">{item.text}</dd>
+                <dd className="text-base leading-snug text-muted-foreground">
+                  {item.text}
+                  {item.tools && (
+                    <details className="group mt-2">
+                      <summary className="flex w-fit cursor-pointer list-none items-center gap-2 text-sm text-primary underline underline-offset-4 [&::-webkit-details-marker]:hidden">
+                        <ArrowRight aria-hidden="true" className="size-4 shrink-0 text-primary group-open:rotate-90 motion-safe:transition-transform" />
+                        Список инструментов
+                      </summary>
+                      <p className="mt-2">{item.tools}</p>
+                    </details>
+                  )}
+                </dd>
               </div>
             ))}
           </dl>
@@ -72,10 +83,8 @@ export function ProcessSection() {
   return (
     <section id="process" className="border-y border-border bg-ember px-4 py-20 sm:px-8 md:py-28 lg:px-14">
       <div className="mx-auto max-w-[1320px]">
-        <div className="mb-14 grid gap-6 md:items-end">
-          <h2 className="text-4xl font-semibold uppercase leading-[0.98] tracking-[-0.04em] md:text-6xl">Креативный подход — системное мышление.</h2>
-        </div>
         <div className="grid gap-4 md:grid-cols-3">
+          <h2 className="pl-[4px] col-span-full mb-10 text-left text-4xl font-semibold leading-[0.98] tracking-[-0.04em] md:text-6xl">Креативный подход — системное мышление.</h2>
           {steps.map(([num, title, text]) => (
             <div key={num} className="rounded-3xl border border-border bg-background/58 p-7 backdrop-blur">
               <p className="mb-10 font-heading text-6xl font-semibold text-primary/80">{num}</p>
@@ -120,7 +129,7 @@ export function ShowsSection() {
   return (
     <section className="bg-background px-4 py-20 text-foreground sm:px-8 md:py-28 lg:px-14">
       <div className="mx-auto max-w-[1320px]">
-        <h2 className="mb-10 text-5xl font-semibold leading-[0.92] tracking-[-0.05em] md:mb-14 md:text-7xl">Проекты на мероприятиях</h2>
+        <h2 className="mb-10 text-5xl font-semibold leading-[0.92] tracking-[-0.05em] md:mb-14 md:text-7xl">Показы на мероприятиях</h2>
         <div className="border-y border-border">
           {projects.map((project) => (
             <article key={project.title} className="grid gap-5 border-b border-border py-7 last:border-b-0 md:grid-cols-[12rem_minmax(0,1fr)_auto] md:items-center md:gap-8 md:py-9">

@@ -9,9 +9,9 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/72 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-4 sm:px-8 lg:px-14">
-        <a href="#top" className="group flex items-center gap-3" aria-label="К началу страницы">
-          <img src={import.meta.env.BASE_URL + "img/kg-logo.svg"} alt="" width={40} height={40} />
-          <span className="hidden font-heading text-sm font-bold uppercase tracking-[0.24em] sm:block">Ksenia Guseva / Visual designer</span>
+        <a href="#top" className="group flex items-center gap-4" aria-label="К началу страницы">
+          <img src={import.meta.env.BASE_URL + "img/kg-logo.svg"} alt="" width={32} height={32} />
+          <span className="hidden font-heading text-sm font-bold leading-none uppercase tracking-[0.24em] sm:block">Ksenia Guseva / Visual designer</span>
         </a>
         <nav className="hidden items-center gap-1 md:flex" aria-label="Главное меню">
           {nav.map((item) => (

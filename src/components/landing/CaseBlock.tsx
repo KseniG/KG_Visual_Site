@@ -52,9 +52,9 @@ export function CaseBlock({ section }: Props) {
     }, calm ? 100 : 650);
   };
   return (
-    <article id={section.id} className="scroll-mt-24 border-t border-border py-12 md:py-20">
-      <div className="relative lg:px-14">
-        <div className="case-grid grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+    <article id={section.id} className="scroll-mt-24 border-t border-border py-[clamp(3rem,6vw,5rem)]">
+      <div className="relative lg:px-[clamp(3.5rem,5vw,4.5rem)]">
+        <div className="case-grid grid gap-[clamp(1rem,2.5vw,2.5rem)] lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
           <div className="case-text-shell min-w-0 overflow-hidden rounded-3xl border border-border bg-card-ember p-6 pb-5 md:p-8 md:pb-5">
             <div className="mb-5 flex items-center gap-2 whitespace-nowrap text-primary" aria-live="polite">
               <span className="text-sm font-semibold tabular-nums text-primary">
@@ -130,7 +130,9 @@ export function CaseBlock({ section }: Props) {
                 <div key={i} className={`flex min-h-0 min-w-0 items-center justify-center ${image.fit === "full-height" || item.layout === "full-height" ? "case-media-full-height" : ""}`}>
                   {image.type === "video" ? <video
                     src={image.src}
-                    controls
+                    autoPlay
+                    muted
+                    loop
                     playsInline
                     preload="metadata"
                     aria-label={image.alt}
