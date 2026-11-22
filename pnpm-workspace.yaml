@@ -1,0 +1,5 @@
+# Настройки pnpm для приложения (управляются платформой)
+nodeLinker: hoisted
+autoInstallPeers: true
+strictPeerDependencies: false
+ignoreScripts: true
