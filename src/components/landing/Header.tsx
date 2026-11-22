@@ -1,5 +1,7 @@
 const nav = [
+  { href: "#about", label: "Обо мне" },
   { href: "#cases", label: "Кейсы" },
+  { href: "#process", label: "Подход" },
   { href: "#contacts", label: "Контакты" },
 ];
 
