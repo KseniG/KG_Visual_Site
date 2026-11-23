@@ -1,6 +1,6 @@
+import { useLayoutEffect } from "react";
 import { Header } from "@/components/landing/Header";
 import { HeroPortfolio } from "@/components/landing/HeroPortfolio";
-import { MobileWelcome } from "@/components/landing/MobileWelcome";
 import {
   AboutSection,
   CasesSection,
@@ -12,6 +12,12 @@ import {
 
 // Локальная сборка из доступных блоков. Исходный Index.tsx отсутствовал.
 export default function Index() {
+  useLayoutEffect(() => {
+    const sectionId = window.location.hash.slice(1);
+    if (sectionId) {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "instant", block: "start" });
+    }
+  }, []);
   return (
     <div id="top">
       <Header />
@@ -24,7 +30,6 @@ export default function Index() {
         <FilmSection />
       </main>
       <Footer />
-      <MobileWelcome />
     </div>
   );
 }
